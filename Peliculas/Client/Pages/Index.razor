@@ -1,0 +1,60 @@
+﻿@page "/"
+
+
+<div>
+
+    <h3>Peliculas</h3>
+    <ListadoPelicula Peliculas="ObtenerPeliculas()" />
+
+
+
+</div>
+
+<div>
+    <h2>Crear nueva pelicula </h2>
+
+    <EjemploTxt />
+
+
+</div>
+
+
+@code {
+    //Pelicula WakandaForeve { get { return ObtenerPelicula(); } }
+
+    //private List<Pelicula> Peliculas;
+
+    List<Pelicula> ObtenerPeliculas()
+    {
+
+        return new List<Pelicula>()
+        {
+            new Pelicula() {Titulo = "Wakanda Forever", FechaLazamineto = new DateTime(2022, 11, 11)},
+            new Pelicula() {Titulo = "Moana", FechaLazamineto = new DateTime(2016, 11, 23)},
+            new Pelicula() {Titulo = "Inception", FechaLazamineto = new DateTime(2010, 7, 16)}
+
+
+        };
+
+    }
+
+
+
+
+
+
+
+
+    Pelicula ObtenerPelicula()
+    {
+        return new Pelicula
+            {
+                Titulo = "Wakanda Forever",
+                FechaLazamineto = new DateTime(2022, 11, 11)
+            };
+    }
+
+
+
+
+}

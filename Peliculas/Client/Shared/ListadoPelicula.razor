@@ -1,0 +1,47 @@
+﻿
+<input type="checkbox" @bind="MostarBotones" />
+
+<ListadoGenerico Listado="Peliculas">
+    <HayRegistro Context="pelicula">
+        <PeliculaIndividual Pelicula="pelicula" ElimanarPelicula="eliminarPelicula"
+                            MostrarBotones="MostarBotones" />
+    </HayRegistro>
+</ListadoGenerico>
+
+
+
+
+
+
+@code {
+    [Parameter] public List<Pelicula> Peliculas { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("OnInitialized");
+    }
+
+     protected override void OnParametersSet()
+    {
+        Console.WriteLine("OnParametersSet");
+    }
+
+     protected override void OnAfterRender(bool primeraRenderizacion)
+    {
+        Console.WriteLine("OnAfterRender: Primera vez:" + primeraRenderizacion);
+    }
+     protected override void ()
+    {
+        Console.WriteLine("OnInitialized");
+    }
+    bool MostarBotones = true;
+
+
+    void eliminarPelicula(Pelicula pelicula)
+    {
+        Peliculas.Remove(pelicula);
+        Console.WriteLine("se ha eliminado una pelicula");
+    }
+
+
+}
